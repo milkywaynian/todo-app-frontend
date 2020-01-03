@@ -1,5 +1,6 @@
 
 import React from 'react'
+import InboxBadge from './InboxBadge'
 
 
 class NavInbox extends React.Component {
@@ -8,6 +9,7 @@ class NavInbox extends React.Component {
         return (
             <li className="nav-item">
                        Inbox
+                       <InboxBadge />
                     </li>
         );
     }

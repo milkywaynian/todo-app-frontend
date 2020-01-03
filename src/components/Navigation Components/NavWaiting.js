@@ -1,5 +1,6 @@
 
 import React from 'react'
+import WaitingBadge from './WaitingBadge'
 
 
 class NavWaiting extends React.Component {
@@ -8,6 +9,7 @@ class NavWaiting extends React.Component {
         return (
             <li className="nav-item">
                        Waiting
+                       <WaitingBadge />
                     </li>
         );
     }
