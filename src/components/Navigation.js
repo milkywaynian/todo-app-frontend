@@ -1,4 +1,11 @@
 import React from 'react'
+import NavHome from './Navigation Components/NavHome'
+import NavInbox from './Navigation Components/NavInbox'
+import NavProjects from './Navigation Components/NavProjects'
+import NavContexts from './Navigation Components/NavContexts'
+import NavWaiting from './Navigation Components/NavWaiting'
+import NavSomeday from './Navigation Components/NavSomeday'
+import NavReference from './Navigation Components/NavReference'
 
 class Navigation extends React.Component {
 
@@ -7,28 +14,13 @@ class Navigation extends React.Component {
             <div className = "row">
             <div className="col-3 d-none d-md-block bg-light sidebar-sticky sidebar">
                <ul className="nav flex-column">
-                    <li className="nav-item">
-                       HOME
-                    </li>
-                    <li className="nav-item">
-                       Inbox
-                      
-                    </li>
-                    <li className="nav-item">
-                        Projects
-                    </li>
-                    <li className="nav-item">
-                        Contexts
-                    </li>
-                    <li className="nav-item">
-                        Waiting
-                    </li>
-                    <li className="nav-item">
-                        Someday
-                    </li>
-                    <li className="nav-item">
-                        Reference
-                    </li>
+                    <NavHome />
+                    <NavInbox />
+                    <NavProjects />
+                    <NavContexts />
+                    <NavWaiting />
+                    <NavSomeday />
+                    <NavReference />
                 </ul>
             </div>
             </div>
