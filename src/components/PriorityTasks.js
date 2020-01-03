@@ -1,6 +1,9 @@
 import React from 'react'
 import PriorityHeader from "./Priority Tasks Components/PriorityHeader"
 import PriorityItems from "./Priority Tasks Components/PriorityItems"
+import AddANewItemHeader from "./New Item Components/AddANewItemHeader"
+import AddAnItem from "./New Item Components/AddAnItem"
+
 
 class PriorityTasks extends React.Component {
 
@@ -9,6 +12,8 @@ class PriorityTasks extends React.Component {
         <>
             <PriorityHeader />
             <PriorityItems />
+            <AddANewItemHeader />
+            <AddAnItem />
          </>
         );
     }
