@@ -10,9 +10,7 @@ import NavReference from './Navigation Components/NavReference'
 class Navigation extends React.Component {
 
     render() {
-        return (
-            <div className = "row">
-            <div className="col-3 d-none d-md-block bg-light sidebar-sticky sidebar">
+        return (<div>
                <ul className="nav flex-column">
                     <NavHome />
                     <NavInbox />
@@ -22,7 +20,6 @@ class Navigation extends React.Component {
                     <NavSomeday />
                     <NavReference />
                 </ul>
-            </div>
             </div>
         );
     }
