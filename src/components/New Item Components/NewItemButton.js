@@ -2,15 +2,18 @@ import React from 'react'
 import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
 
 
-class PriorityHeader extends React.Component {
+
+class NewItemButton extends React.Component {
 
     render() {
         return (
             <>
-             <h2 className = "pt-3 pb-3 first-header">Priority tasks:</h2>
+                <submit className="add btn btn-primary font-weight-bold todo-list-add-btn">Add</submit>
             </>
         );
     }
   }
   
-  export default PriorityHeader; 
+  export default NewItemButton; 
+
+

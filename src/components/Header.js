@@ -1,4 +1,5 @@
 import React from 'react';
+import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
 
 class Header extends React.Component {
 
@@ -6,7 +7,8 @@ class Header extends React.Component {
         return (
             <div className="row">
                  <div className = "col-12 d-none d-md-block navbar navbar-light bg-light navbar-brand main-header">
-                    GETTING THINGS DONE 
+                 <img src="https://image.flaticon.com/icons/png/512/1584/1584942.png" width="30" height="30" className="d-inline-block align-top mr-2" alt="clock"></img>
+                  GETTING THINGS DONE 
                  </div>
             </div>
         );
