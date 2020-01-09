@@ -1,6 +1,5 @@
 import React from 'react'
 import NewItemButton from "./NewItemButton"
-import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
 
 
 

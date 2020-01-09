@@ -6,7 +6,7 @@ import NavContexts from './Navigation Components/NavContexts'
 import NavWaiting from './Navigation Components/NavWaiting'
 import NavSomeday from './Navigation Components/NavSomeday'
 import NavReference from './Navigation Components/NavReference'
-import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
+
 
 class Navigation extends React.Component {
 

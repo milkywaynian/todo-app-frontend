@@ -1,7 +1,7 @@
 
 import React from 'react'
 import WaitingBadge from './WaitingBadge'
-import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
+
 
 
 class NavWaiting extends React.Component {

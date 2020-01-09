@@ -1,7 +1,7 @@
 
 import React from 'react'
 import InboxBadge from './InboxBadge'
-import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
+
 
 
 class NavInbox extends React.Component {

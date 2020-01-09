@@ -1,6 +1,6 @@
 
 import React from 'react'
-import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
+
 
 
 class NavProjects extends React.Component {

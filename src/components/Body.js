@@ -1,7 +1,7 @@
 import React from 'react';
 import Navigation from './Navigation'
 import PriorityTasks from './PriorityTasks'
-import '/Users/coding/step_into_tech_course/todo-app-frontend/src/App.css'
+
 
 
 class Body extends React.Component {
