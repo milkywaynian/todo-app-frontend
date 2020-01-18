@@ -9,6 +9,7 @@ class App extends React.Component {
 state = {
   tasks: [
     {id:1, description: "buy a magazine", completed: false},
+    {id:2, description: "buy a book", completed: false},
     {id:2, description: "buy a book", completed: false}
   ]
 }  
@@ -17,7 +18,7 @@ render() {
   return (
     <div className="container">
       <Header />
-      <Body taskCount={this.state.tasks.length}/>
+      <Body taskCount={this.state.tasks.length} allTasks ={this.state.tasks}/>
     </div>
   );
 }
