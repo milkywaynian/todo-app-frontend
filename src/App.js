@@ -4,16 +4,25 @@ import Body from './components/Body'
 import "./App.css";
 
 
+class App extends React.Component {
 
-function App() {
+state = {
+  tasks: [
+    {id:1, description: "buy a magazine", completed: false},
+    {id:2, description: "buy a book", completed: false}
+  ]
+}  
+
+render() {
   return (
     <div className="container">
       <Header />
-      <Body />
+      <Body taskCount={this.state.tasks.length}/>
     </div>
-  )
+  );
 }
 
+}
 
 export default App; 
 

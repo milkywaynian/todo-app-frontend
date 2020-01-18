@@ -11,7 +11,7 @@ class Body extends React.Component {
         <div>
             <div className = "row">
             <div className="col-3 d-none d-md-block bg-light sidebar sidebar-sticky">
-            <Navigation />
+            <Navigation test = {this.props.taskCount}/>
             </div>
 
             <div className="col-9 middle">
