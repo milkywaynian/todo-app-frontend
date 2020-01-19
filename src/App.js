@@ -16,8 +16,8 @@ state = {
 }  
 
 deleteTask = (taskId) => {
-  const tasks = this.state.tasks;
-  const updatedTasks = tasks.filter(task => task.id !== taskId); 
+  
+  const updatedTasks = this.state.tasks.filter(task => task.id !== taskId); 
   this.setState({ 
     tasks:updatedTasks
   });
