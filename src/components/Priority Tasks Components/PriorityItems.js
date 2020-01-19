@@ -13,7 +13,7 @@ class PriorityItems extends React.Component {
                   <li>
                   {
                     this.props.allTasks.map(
-                      (taskOption) => <ListItem itemName={taskOption.description}/>
+                      (taskOption) => <ListItem item={taskOption} deleteTaskFunc ={this.props.deleteTaskFunc} />
 
                       )
                                
