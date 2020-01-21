@@ -23,12 +23,21 @@ deleteTask = (taskId) => {
   });
   } 
 
+addTask = (taskDescription) => {
+  const newTask = {description: taskDescription};
+  const allTasks = this.state.tasks;
+  allTasks.push(newTask);
+  this.setState({
+    tasks:allTasks
+  })
+}
+
 
 render() {
   return (
     <div className="container">
       <Header />
-      <Body taskCount={this.state.tasks.length} allTasks ={this.state.tasks} deleteTaskFunc = {this.deleteTask} />
+      <Body taskCount={this.state.tasks.length} allTasks ={this.state.tasks} deleteTaskFunc = {this.deleteTask} addTaskFunc = {this.addTask} />
     </div>
   );
 }
