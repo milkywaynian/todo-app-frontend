@@ -15,7 +15,7 @@ deleteAction = () => {
             <div className ="row">
                 <div className ="col-md-7 col-sm-12">
                     <input className="form-check-input" type="checkbox" id="defaultCheck1"></input>
-                    <label className="form-check-label pb-2" for="defaultCheck1">
+                    <label className="form-check-label pb-2" htmlFor="defaultCheck1">
                         <p>{this.props.item.description}</p>
                     </label>
                 </div>

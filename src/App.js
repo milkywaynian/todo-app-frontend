@@ -2,16 +2,18 @@ import React from "react";
 import Header from './components/Header';
 import Body from './components/Body'
 import "./App.css";
+import uuidv4 from 'uuid/v4';
+
 
 
 class App extends React.Component {
 
 state = {
   tasks: [
-    {id:1, description: "buy a magazine", completed: false},
-    {id:2, description: "buy a book", completed: false},
-    {id:3, description: "buy a book", completed: false},
-    {id:4, description: "test", completed: false}
+    {id: uuidv4(), description: "buy a magazine", completed: false},
+    {id: uuidv4(), description: "buy a book", completed: false},
+    {id: uuidv4(), description: "buy a book", completed: false},
+    {id: uuidv4(), description: "test", completed: false}
   ]
 }  
 
@@ -24,7 +26,7 @@ deleteTask = (taskId) => {
   } 
 
 addTask = (taskDescription) => {
-  const newTask = {description: taskDescription};
+  const newTask = {id: uuidv4(), description: taskDescription, completed: false};
   const allTasks = this.state.tasks;
   allTasks.push(newTask);
   this.setState({
