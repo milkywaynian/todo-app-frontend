@@ -4,7 +4,7 @@ import React from 'react'
 class NewItemButton extends React.Component {
 
     addNewTask = () => {
-        this.props.addTaskFunc("Pickup the shopping");
+        this.props.addTaskFunc(this.props.taskInput); 
     }
 
     render() {
