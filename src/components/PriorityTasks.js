@@ -12,7 +12,7 @@ class PriorityTasks extends React.Component {
         return (
         <>
             <PriorityHeader />
-            <PriorityItems allTasks = {this.props.allTasks} deleteTaskFunc ={this.props.deleteTaskFunc} />
+            <PriorityItems allTasks = {this.props.allTasks} deleteTaskFunc ={this.props.deleteTaskFunc} completeTaskFunc={this.props.completeTaskFunc} />
             <AddANewItemHeader />
             <AddAnItem addTaskFunc = {this.props.addTaskFunc}/>
          </>

@@ -8,9 +8,8 @@ deleteAction = () => {
     this.props.deleteTaskFunc(this.props.item.id); 
 }
 
-checkboxClicked = () =>
-    {
-        alert (`You clicked done for task ${this.props.item.id}`);
+checkboxClicked = () => {
+        this.props.completeTaskFunc(this.props.item.id);
     }
 
 

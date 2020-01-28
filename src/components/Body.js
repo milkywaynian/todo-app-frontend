@@ -15,7 +15,7 @@ class Body extends React.Component {
             </div>
 
             <div className="col-9 middle">
-            <PriorityTasks allTasks = {this.props.allTasks} deleteTaskFunc ={this.props.deleteTaskFunc} addTaskFunc = {this.props.addTaskFunc}/>
+            <PriorityTasks allTasks = {this.props.allTasks} deleteTaskFunc ={this.props.deleteTaskFunc} completeTaskFunc={this.props.completeTaskFunc} addTaskFunc = {this.props.addTaskFunc}/>
             </div>
             </div>
         </div>
