@@ -8,13 +8,18 @@ deleteAction = () => {
     this.props.deleteTaskFunc(this.props.item.id); 
 }
 
+checkboxClicked = () =>
+    {
+        alert (`You clicked done for task ${this.props.item.id}`);
+    }
+
 
     render() {
         return (
             <>
             <div className ="row">
                 <div className ="col-md-7 col-sm-12">
-                    <input className="form-check-input" type="checkbox" id="defaultCheck1"></input>
+                    <input className="form-check-input" type="checkbox" id="defaultCheck1" onClick = {this.checkboxClicked}></input>
                     <label className="form-check-label pb-2" htmlFor="defaultCheck1">
                         <p>{this.props.item.description}</p>
                     </label>
