@@ -14,7 +14,7 @@ class Navigation extends React.Component {
         return (<div>
                <ul className="nav flex-column">
                     <NavHome />
-                    <NavInbox test = {this.props.test}/>
+                    <NavInbox taskCount = {this.props.taskCount}/>
                     <NavProjects />
                     <NavContexts />
                     <NavWaiting />

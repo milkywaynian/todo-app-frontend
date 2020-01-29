@@ -15,12 +15,13 @@ class ListItem extends React.Component {
 
     render() {
 
-        let completed;
+        let taskDescription;
     
         if (this.props.item.completed) {
-                completed = <p>{this.props.item.description}</p>
+                taskDescription = 
+                <p className = "completed">{this.props.item.description}</p>
         } else {
-                completed = <p >{this.props.item.description}</p>
+                taskDescription = <p>{this.props.item.description}</p>
         }
 
         return (
@@ -28,15 +29,15 @@ class ListItem extends React.Component {
 
             <div className="row">
                     <div className="col-md-7 col-sm-12">
-                        <input className="form-check-input" type="checkbox" id="defaultCheck1" checked={this.props.checked} onChange={this.checkboxClicked}></input>
+                        <input className="form-check-input" type="checkbox" id="defaultCheck1" onChange={this.checkboxClicked}></input>
                         <label className="form-check-label pb-2" htmlFor="defaultCheck1">
-                            {completed}
+                            {taskDescription}
                         </label>
                     </div>
 
                     <div className="col-md-5">
-                        <button type="button" className="btn btn-sm btn-warning buttonStyle">edit</button>
-                        <button type="button" className="btn btn-sm btn-danger" onClick={this.deleteAction}>delete</button>
+                        {!this.props.item.completed && (<button type="button" className="btn btn-sm btn-warning buttonStyle">edit</button>)}
+                    <button type="button" className="btn btn-sm btn-danger" onClick={this.deleteAction}>delete</button>
                     </div>
 
                 </div>

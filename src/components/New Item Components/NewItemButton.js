@@ -10,7 +10,7 @@ class NewItemButton extends React.Component {
     render() {
         return (
             <>
-                <submit className="add btn btn-primary font-weight-bold todo-list-add-btn" onClick = {this.addNewTask}>Add</submit>
+                <button className="add btn btn-primary font-weight-bold todo-list-add-btn" onClick = {this.addNewTask}>Add</button>
             </>
         );
     }

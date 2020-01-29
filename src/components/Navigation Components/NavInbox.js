@@ -10,7 +10,7 @@ class NavInbox extends React.Component {
         return (
             <li className="nav-item">
                       <a className="nav-link" href="https://www.google.com/">
-                       Inbox <InboxBadge test = {this.props.test}/>
+                       Inbox <InboxBadge taskCount = {this.props.taskCount}/>
                 </a>
                     </li>
         );

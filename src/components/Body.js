@@ -11,11 +11,11 @@ class Body extends React.Component {
         <div>
             <div className = "row">
             <div className="col-3 d-none d-md-block bg-light sidebar sidebar-sticky">
-            <Navigation test = {this.props.taskCount}/>
+            <Navigation taskCount = {this.props.taskCount}/>
             </div>
 
             <div className="col-9 middle">
-            <PriorityTasks allTasks = {this.props.allTasks} deleteTaskFunc ={this.props.deleteTaskFunc} completeTaskFunc={this.props.completeTaskFunc} checked={this.props.checked} addTaskFunc = {this.props.addTaskFunc}/>
+            <PriorityTasks allTasks = {this.props.allTasks} deleteTaskFunc ={this.props.deleteTaskFunc} completeTaskFunc={this.props.completeTaskFunc} addTaskFunc = {this.props.addTaskFunc}/>
             </div>
             </div>
         </div>

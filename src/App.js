@@ -25,17 +25,21 @@ class App extends React.Component {
     });
   }
 
+  incompleteItemsCount = () => {
+      return this.state.tasks.filter(task => task.completed === false).length 
+  }
+
+  //todo: rewrite to make it simple - the break is quite confusing!
   completeTask = (taskId) => {
     const tasksBeingUpdated = this.state.tasks;
     for (let i = 0; i < tasksBeingUpdated.length; i++) {
       const updatedTask = tasksBeingUpdated[i]
-        if(updatedTask === taskId) {
+        if(updatedTask.id === taskId) {
           updatedTask.completed = true;
-          break;
+          this.setState ({
+            tasks: tasksBeingUpdated
+          });
         }
-      this.setState ({
-          tasks: tasksBeingUpdated
-        });
     }
     console.log(tasksBeingUpdated); 
 
@@ -50,15 +54,13 @@ class App extends React.Component {
     })
   }
 
-  handleCheckClick = () => {
-    this.setState({ checked: !this.state.checked });
-  }
+
 
   render() {
     return (
       <div className="container">
         <Header />
-        <Body taskCount={this.state.tasks.length} allTasks={this.state.tasks} deleteTaskFunc={this.deleteTask} addTaskFunc={this.addTask} completeTaskFunc={this.completeTask} checked={this.state.handleCheckClick}/>
+        <Body taskCount={this.incompleteItemsCount()} allTasks={this.state.tasks} deleteTaskFunc={this.deleteTask} addTaskFunc={this.addTask} completeTaskFunc={this.completeTask}/>
       </div>
     );
   }
