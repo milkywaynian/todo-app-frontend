@@ -50,12 +50,15 @@ class App extends React.Component {
     })
   }
 
+  handleCheckClick = () => {
+    this.setState({ checked: !this.state.checked });
+  }
 
   render() {
     return (
       <div className="container">
         <Header />
-        <Body taskCount={this.state.tasks.length} allTasks={this.state.tasks} deleteTaskFunc={this.deleteTask} addTaskFunc={this.addTask} completeTaskFunc={this.completeTask} />
+        <Body taskCount={this.state.tasks.length} allTasks={this.state.tasks} deleteTaskFunc={this.deleteTask} addTaskFunc={this.addTask} completeTaskFunc={this.completeTask} checked={this.state.handleCheckClick}/>
       </div>
     );
   }
