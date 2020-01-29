@@ -16,12 +16,17 @@ class ListItem extends React.Component {
     render() {
 
         let taskDescription;
+        let buttonState;
     
         if (this.props.item.completed) {
                 taskDescription = 
                 <p className = "completed">{this.props.item.description}</p>
+                buttonState =
+                <button type="button" className="btn btn-sm btn-secondary buttonStyle" disabled>edit</button>
         } else {
                 taskDescription = <p>{this.props.item.description}</p>
+                buttonState = 
+                <button type="button" className="btn btn-sm btn-warning buttonStyle">edit</button>
         }
 
         return (
@@ -36,7 +41,7 @@ class ListItem extends React.Component {
                     </div>
 
                     <div className="col-md-5">
-                        {!this.props.item.completed && (<button type="button" className="btn btn-sm btn-warning buttonStyle">edit</button>)}
+                        {buttonState}
                     <button type="button" className="btn btn-sm btn-danger" onClick={this.deleteAction}>delete</button>
                     </div>
 
