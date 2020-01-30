@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { IoIosHome } from "react-icons/io";
 
 
 class NavHome extends React.Component {
@@ -8,7 +9,7 @@ class NavHome extends React.Component {
         return (
             <li className="nav-item">
                 <a className="nav-link" href="https://www.google.com/">
-                       HOME
+                <IoIosHome /> HOME
                 </a>
                     </li>
         );

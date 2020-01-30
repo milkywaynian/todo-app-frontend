@@ -9,35 +9,35 @@ import uuidv4 from 'uuid/v4';
 class App extends React.Component {
 
   state = {
-    tasks: [
+    incompleteTasks: [
       { id: uuidv4(), description: "buy a magazine", completed: false },
       { id: uuidv4(), description: "buy a book", completed: false },
       { id: uuidv4(), description: "buy a book", completed: false },
       { id: uuidv4(), description: "test", completed: false }
-    ]
+    ],
+
+    completedTasks: []
   }
 
   deleteTask = (taskId) => {
 
-    const updatedTasks = this.state.tasks.filter(task => task.id !== taskId);
+    const updatedTasks = this.state.incompleteTasks.filter(task => task.id !== taskId);
     this.setState({
-      tasks: updatedTasks
+      incompleteTasks: updatedTasks
     });
   }
 
   incompleteItemsCount = () => {
-      return this.state.tasks.filter(task => task.completed === false).length 
+      return this.state.incompleteTasks.filter(task => task.completed === false).length 
   }
 
-  //todo: rewrite to make it simple - the break is quite confusing!
   completeTask = (taskId) => {
-    const tasksBeingUpdated = this.state.tasks;
+    const tasksBeingUpdated = this.state.incompleteTasks;
     for (let i = 0; i < tasksBeingUpdated.length; i++) {
-      const updatedTask = tasksBeingUpdated[i]
-        if(updatedTask.id === taskId) {
-          updatedTask.completed = true;
+        if(tasksBeingUpdated[i].id === taskId) {
+          tasksBeingUpdated[i].completed = true;
           this.setState ({
-            tasks: tasksBeingUpdated
+            incompleteTasks: tasksBeingUpdated
           });
         }
     }
@@ -47,10 +47,10 @@ class App extends React.Component {
 
   addTask = (taskDescription) => {
     const newTask = { id: uuidv4(), description: taskDescription, completed: false };
-    const allTasks = this.state.tasks;
+    const allTasks = this.state.incompleteTasks;
     allTasks.push(newTask);
     this.setState({
-      tasks: allTasks
+      incompleteTasks: allTasks
     })
   }
 
@@ -60,7 +60,7 @@ class App extends React.Component {
     return (
       <div className="container">
         <Header />
-        <Body taskCount={this.incompleteItemsCount()} allTasks={this.state.tasks} deleteTaskFunc={this.deleteTask} addTaskFunc={this.addTask} completeTaskFunc={this.completeTask}/>
+        <Body taskCount={this.incompleteItemsCount()} allTasks={this.state.incompleteTasks} deleteTaskFunc={this.deleteTask} addTaskFunc={this.addTask} completeTaskFunc={this.completeTask}/>
       </div>
     );
   }

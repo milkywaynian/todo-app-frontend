@@ -1,6 +1,6 @@
 
 import React from 'react'
-
+import { IoIosAlbums } from "react-icons/io";
 
 
 class NavProjects extends React.Component {
@@ -9,7 +9,7 @@ class NavProjects extends React.Component {
         return (
             <li className="nav-item">
                        <a className="nav-link" href="https://www.google.com/">
-                       Projects
+                       <IoIosAlbums/>Projects
                 </a>
                     </li>
         );
