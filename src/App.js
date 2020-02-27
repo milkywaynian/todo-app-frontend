@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Body from './components/Body'
 import "./App.css";
 import uuidv4 from 'uuid/v4';
+import axios from "axios";
 
 
 
@@ -10,13 +11,21 @@ class App extends React.Component {
 
   state = {
     incompleteTasks: [
-      { id: uuidv4(), description: "buy a magazine", completed: false },
-      { id: uuidv4(), description: "buy a book", completed: false },
-      { id: uuidv4(), description: "buy a book", completed: false },
-      { id: uuidv4(), description: "test", completed: false }
     ],
 
     completedTasks: []
+  };
+
+  componentDidMount = () => {
+    axios.get('https://l9d6i1g2ii.execute-api.eu-west-2.amazonaws.com/dev/tasks')
+     .then(function (response){
+       //handle success
+       console.log(response);
+     })
+      //handle errors
+     .catch(function (error) {
+       console.error(error);
+     });
   }
 
   deleteTask = (taskId) => {
