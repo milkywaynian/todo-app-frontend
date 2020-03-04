@@ -17,7 +17,7 @@ class App extends React.Component {
   componentDidMount = () => {
     console.log("calling backend server to retrieve state");
     axios.get('https://l9d6i1g2ii.execute-api.eu-west-2.amazonaws.com/dev/tasks')
-     .then((response) => {
+     .then(response => {
        //handle success
        console.log(response.data.tasks);
        this.setState({
@@ -31,11 +31,20 @@ class App extends React.Component {
   }
 
   deleteTask = (taskId) => {
-
-    const updatedTasks = this.state.incompleteTasks.filter(task => task.taskID !== taskId);
-    this.setState({
+    
+    axios.delete(`https://l9d6i1g2ii.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`)
+     .then(response => {
+       //handle success
+       const updatedTasks = this.state.incompleteTasks.filter(task => task.taskID !== taskId);
+      this.setState({
       incompleteTasks: updatedTasks
     });
+     })
+      //handle errors
+     .catch(function (error) {
+       console.error(error);
+     });
+
   }
 
   incompleteItemsCount = () => {
@@ -64,7 +73,7 @@ class App extends React.Component {
     }
 
     axios.post('https://l9d6i1g2ii.execute-api.eu-west-2.amazonaws.com/dev/tasks', newTask)
-    .then((response) => {
+    .then(response => {
 
       // newTask.taskID = response.data.task.taskID;
        // //handle success
