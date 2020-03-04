@@ -76,6 +76,7 @@ class App extends React.Component {
   }; 
 
   addTask = (taskDescription) => {
+    
     const newTask = { 
       description: taskDescription,
       completed: false,
@@ -85,7 +86,9 @@ class App extends React.Component {
     axios.post('https://l9d6i1g2ii.execute-api.eu-west-2.amazonaws.com/dev/tasks', newTask)
     .then(response => {
 
-      // newTask.taskID = response.data.task.taskID;
+      newTask.taskID = response.data.taskID;
+      console.log(response.data);
+
        // //handle success
       console.log(JSON.stringify(response.data));
 
