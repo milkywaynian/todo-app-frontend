@@ -52,18 +52,28 @@ class App extends React.Component {
   }
 
   completeTask = (taskId) => {
-    const tasksBeingUpdated = this.state.incompleteTasks;
-    for (let i = 0; i < tasksBeingUpdated.length; i++) {
-        if(tasksBeingUpdated[i].taskID === taskId) {
-          tasksBeingUpdated[i].completed = true;
-          this.setState ({
-            incompleteTasks: tasksBeingUpdated
-          });
-        }
-    }
-    console.log(tasksBeingUpdated); 
 
-  }  
+    axios.put(`https://l9d6i1g2ii.execute-api.eu-west-2.amazonaws.com/dev/tasks/${taskId}`)
+    .then(response => {
+      //handle success
+      const tasksBeingUpdated = this.state.incompleteTasks;
+      for (let i = 0; i < tasksBeingUpdated.length; i++) {
+          if(tasksBeingUpdated[i].taskID === taskId) {
+            tasksBeingUpdated[i].completed = true;
+            this.setState ({
+              incompleteTasks: tasksBeingUpdated
+            });
+          }
+      }
+      console.log(tasksBeingUpdated); 
+
+
+    })
+     //handle errors
+    .catch(function (error) {
+      console.error(error);
+    });
+  }; 
 
   addTask = (taskDescription) => {
     const newTask = { 
