@@ -5,11 +5,11 @@ import React from 'react'
 class ListItem extends React.Component {
 
     deleteAction = () => {
-        this.props.deleteTaskFunc(this.props.item.id);
+        this.props.deleteTaskFunc(this.props.item.taskID);
     }
 
     checkboxClicked = () => {
-        this.props.completeTaskFunc(this.props.item.id);
+        this.props.completeTaskFunc(this.props.item.taskID);
     }
 
 
